@@ -25,32 +25,30 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// Image modal
-const images = document.querySelectorAll("figure img, .image-card img");
+// IMAGE MODAL
 const imgModal = document.getElementById("imgModal");
 const modalImg = document.getElementById("modalImg");
-const closeImgModal = document.querySelector("#imgModal .close-modal");
+const closeModal = document.querySelector(".close-modal");
 
-images.forEach((img) => {
-  img.addEventListener("click", () => {
+// OPEN IMAGE
+document.querySelectorAll(".clickable-img").forEach(img => {
+  img.addEventListener("click", function () {
     imgModal.style.display = "flex";
-    modalImg.src = img.src;
+    modalImg.src = this.src;
   });
 });
 
-if (closeImgModal) {
-  closeImgModal.onclick = () => {
-    imgModal.style.display = "none";
-  };
-}
+// CLOSE IMAGE
+closeModal.addEventListener("click", () => {
+  imgModal.style.display = "none";
+});
 
-if (imgModal) {
-  imgModal.onclick = (e) => {
-    if (e.target !== modalImg) {
-      imgModal.style.display = "none";
-    }
-  };
-}
+// CLOSE ON BACKGROUND CLICK
+imgModal.addEventListener("click", (e) => {
+  if (e.target === imgModal) {
+    imgModal.style.display = "none";
+  }
+});
 
 // Video modal
 function openVideo(videoId) {

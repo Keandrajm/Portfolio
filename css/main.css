@@ -763,3 +763,36 @@ footer {
   aspect-ratio: 16 / 9;
   border: 0;
 }
+.dashboard-section {
+  margin-top: 50px;
+}
+
+.dashboard-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.dashboard-card img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.dashboard-card:hover img {
+  transform: scale(1.02);
+}
+
+.dashboard-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  font-size: 0.9rem;
+}
